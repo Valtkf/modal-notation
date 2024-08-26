@@ -5,10 +5,11 @@ export default function Card() {
   return (
     <div className="text-xl border-[1px] border-[#E0E0E0] rounded-lg bg-white w-[353px] h-[326px] p-6 transition-shadow duration-400 hover:shadow-lg hover:shadow-gray-400">
       <div className="flex justify-end items-end mr-2 mb-6">
-        <button>
-          <ResetIcon />
+        <button className="rounded-[4px] w-8 h-8 flex justify-center items-center hover:bg-gray-300 duration-300 group">
+          <ResetIcon className="text-[#828282] group-hover:text-black duration-300" />
         </button>
       </div>
+
       <div className="flex justify-center items-center flex-col">
         <h1 className="font-semibold text-2xl text-slate-800 mb-4">
           Quel note donnerais-tu à ce challenge ?
