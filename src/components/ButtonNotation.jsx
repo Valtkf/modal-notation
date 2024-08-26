@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function ButtonNotation() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [selectedIndex, setSlectedIndex] = useState(null);
 
   const handleMouseEnter = (index) => {
     setHoveredIndex(index);
@@ -13,22 +14,29 @@ export default function ButtonNotation() {
     setHoveredIndex(null);
   };
 
+  const handleClick = (index) => {
+    setSlectedIndex(index);
+  };
+
   return (
-    <div className="mt-4 flex space-x-2">
+    <div className="mt-4 flex ">
       {[...Array(5)].map((_, index) => (
         <motion.button
           key={index}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          className="text-purple-500 hover:text-purple-700 duration-300"
+          className="flex justify-center items-center w-[52px] h-[52px] rounded-full text-[#7B61FF] hover:text-[#7B61FF] hover:bg-[#7B61FF33] duration-300"
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={handleMouseLeave}
+          onClick={() => handleClick(index)}
         >
-          {hoveredIndex !== null && hoveredIndex >= index ? (
-            <FaStar size={48} />
+          {selectedIndex !== null && selectedIndex >= index ? (
+            <FaStar size={32} />
+          ) : hoveredIndex !== null && hoveredIndex >= index ? (
+            <FaStar size={32} />
           ) : (
-            <FaRegStar size={48} />
+            <FaRegStar size={32} />
           )}
         </motion.button>
       ))}
