@@ -6,7 +6,7 @@ export default function Card() {
     window.location.reload(false);
   }
   return (
-    <div className="text-xl border-[1px] border-[#E0E0E0] rounded-lg bg-white w-[353px] h-[326px] p-6 transition-shadow duration-400 hover:shadow-lg hover:shadow-gray-400">
+    <div className="text-xl border-[1px] border-[#E0E0E0] rounded-lg bg-white w-[353px] h-[326px] p-6 transition-shadow duration-400 hover:shadow-lg hover:shadow-[#fbbe2489]">
       <div className="flex justify-end items-end mr-2 mb-2">
         <button
           onClick={refreshPage}
